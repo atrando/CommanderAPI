@@ -31,6 +31,13 @@ namespace Commander.Controllers
 			return Ok(commandItems);
 		}
 
+		//GET api/commands
+		[HttpGet("{check}", Name = "CheckAPI")]
+		public ActionResult<IEnumerable<CommandReadDto>> GetAllCommands(string check)
+		{
+			return Ok(check);
+		}
+
 		//GET api/commands/{id}
 		[HttpGet("{id}", Name = "GetCommandById")]
 		public ActionResult<CommandReadDto> GetCommandById(int id)
